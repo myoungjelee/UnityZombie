@@ -138,6 +138,15 @@ public class Gun : MonoBehaviour
         // 재장전 소요 시간 만큼 처리 쉬기
         yield return new WaitForSeconds(gunData.reloadTime);
 
+        int ammoToFill = gunData.magCapacity - magAmmo;
+        if(ammoRemain < ammoToFill)
+        {
+            ammoToFill = ammoRemain;
+        }
+
+        magAmmo += ammoToFill;
+        ammoRemain -= ammoToFill;
+
         // 총의 현재 상태를 발사 준비된 상태로 변경
         state = State.Ready;
     }
