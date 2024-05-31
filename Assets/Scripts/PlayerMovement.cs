@@ -55,6 +55,6 @@ public class PlayerMovement : MonoBehaviour {
 
         //// 캐릭터를 회전합니다.
         //Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
-        //playerRigidbody.MoveRotation(Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime));
+        //playerRigidbody.rotation = (Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime));
     }
 }
